@@ -11,8 +11,9 @@ public:
 	void Help();
 	void Exit();
 	void Clear();
-	void Vivod();
+	void Vivod(char* forPrint);
 	void Wait();
+	TCHAR* CalculateDir();
 
 
 private:

@@ -7,6 +7,8 @@ enum Commands
 	myexit,
 	clear,
 	wait,
+	vivod,
+	currDir
 
 };
 
@@ -17,7 +19,9 @@ Commands resolveCommand(std::string input)
 		{ "help", help },
 		{ "myexit", myexit},
 		{ "clear", clear},
-		{"wait", wait}
+		{"wait", wait},
+		{"vivod", vivod},
+		{"currDir", currDir}
 	};
 
 	auto itr = commandStrings.find(input);

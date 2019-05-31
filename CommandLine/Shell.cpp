@@ -4,6 +4,7 @@
 #include "Executor.h"
 
 
+
 using namespace std;
 
 bool debug = false;
@@ -11,6 +12,7 @@ bool debug = false;
 Shell::Shell()
 {
 	this->input = new char[4096];
+
 }
 
 Shell::~Shell()
@@ -61,7 +63,8 @@ bool Shell::Run()
 
 	while (true)
 	{
-		cout << ">";
+		TCHAR* str = executor.CalculateDir();
+		_tprintf(TEXT("%s>"), str);
 		
 		char* nextInput;
 		string temp;
@@ -83,6 +86,11 @@ bool Shell::Run()
 				executor.Help();
 				break;
 			}
+			case currDir:
+			{
+				executor.CalculateDir();
+				break;
+			}
 			case myexit:
 			{
 				executor.Exit();
@@ -99,6 +107,17 @@ bool Shell::Run()
 				executor.Wait();
 				break;
 			}
+			case vivod:
+			{
+				while (!inputs.empty())
+				{
+					nextInput = inputs.front();
+					inputs.pop();
+					executor.Vivod(nextInput);
+				}
+				cout << endl;
+				break;
+			}
 			default:
 			{
 				cout << "unknown command" << endl;
@@ -106,14 +125,6 @@ bool Shell::Run()
 			}
 		}
 	}
-
-	return true;
-}
-
-bool Shell::History()
-{
-	
-
 
 	return true;
 }

@@ -18,6 +18,7 @@
 #include <Windows.h>
 #include <vector>
 #include <conio.h>
+#include <tchar.h>
 // TODO: add headers that you want to pre-compile here
 
 #endif //PCH_H

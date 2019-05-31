@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 
 class Shell
 {
@@ -10,6 +11,7 @@ public:
 	bool Run();
 	bool History();
 
-	std::vector<std::string> history;
+	
+
 	char* input;
 };

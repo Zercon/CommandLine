@@ -5,10 +5,15 @@ using namespace std;
 
 void Executor::Help()
 { //<< "" << endl
-	cout << "help : print custom documentation"<<endl
+	cout << "{" << endl
+		<< "help : print custom documentation" << endl
 		<< "myexit : exit the programm" << endl
 		<< "clear : clears the console" << endl
-		<< "wait : waits until you press any button" << endl;
+		<< "wait : waits until you press any button" << endl
+		<< "vivod : displays all the following words" << endl
+		<< "currDir : displays current directory" << endl
+		<< "}" << endl;
+
 }
 
 void Executor::Exit()
@@ -41,13 +46,21 @@ void Executor::Clear()
 	PERR(Success, "SetConsoleCursorPosition"); //успех?
 }
 
-void Executor::Vivod()
+void Executor::Vivod(char* forPrint)
 {
-
+	cout << forPrint << " ";
 }
+
 
 void Executor::Wait()
 {
 	std::cout << "Press any key to continue" << std::endl;
 	getch();
+}
+
+TCHAR* Executor::CalculateDir()
+{
+	TCHAR* NPath = new TCHAR[MAX_PATH];
+	GetCurrentDirectory(MAX_PATH, NPath);
+	return NPath;
 }
