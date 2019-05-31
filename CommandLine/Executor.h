@@ -14,6 +14,8 @@ public:
 	void Vivod(char* forPrint);
 	void Wait();
 	TCHAR* CalculateDir();
+	void CreateDir();
+	void Listing();
 
 
 private:

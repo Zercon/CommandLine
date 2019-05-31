@@ -9,7 +9,8 @@ public:
 
 	std::queue<char*> Parse(char* input);
 	bool Run();
-	bool History();
+
+	
 
 	
 

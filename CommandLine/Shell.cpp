@@ -118,6 +118,16 @@ bool Shell::Run()
 				cout << endl;
 				break;
 			}
+			case createDir:
+			{
+				executor.CreateDir();
+				break;
+			}
+			case listing:
+			{
+				executor.Listing();
+				break;
+			}
 			default:
 			{
 				cout << "unknown command" << endl;

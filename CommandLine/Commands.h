@@ -8,7 +8,9 @@ enum Commands
 	clear,
 	wait,
 	vivod,
-	currDir
+	currDir,
+	createDir,
+	listing
 
 };
 
@@ -21,7 +23,9 @@ Commands resolveCommand(std::string input)
 		{ "clear", clear},
 		{"wait", wait},
 		{"vivod", vivod},
-		{"currDir", currDir}
+		{"currDir", currDir},
+	{"createDir", createDir},
+	{"listing", listing}
 	};
 
 	auto itr = commandStrings.find(input);
