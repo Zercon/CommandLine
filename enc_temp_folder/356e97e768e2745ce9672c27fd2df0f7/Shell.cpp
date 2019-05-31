@@ -55,7 +55,8 @@ queue<char*> Shell::Parse(char* input)
 
 bool Shell::Run()
 {
-	cout << "Welcome to custom windows shell\n" << endl;
+	cout << "Welcome to custom windows shell\n" <<
+			"                                 *made by Jerry Khoreshko*\n" << endl;
 	Executor executor;
 	executor.Help();
 
