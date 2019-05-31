@@ -2,12 +2,11 @@
 #include "Shell.h"
 #include "Commands.h"
 #include "Executor.h"
-#include <string.h>
-#include <cstdio>
+
 
 using namespace std;
 
-bool debug = true;
+bool debug = false;
 
 Shell::Shell()
 {
@@ -58,12 +57,16 @@ bool Shell::Run()
 	Executor executor;
 	executor.Help();
 
+	char cod_simvola;
+
 	while (true)
 	{
-		cout << ">"; 
+		cout << ">";
+		
 		char* nextInput;
 		string temp;
 		getline(cin, temp);
+
 		strcpy(this->input, temp.c_str());
 
 		queue<char*> inputs = Parse(this->input);
@@ -87,7 +90,13 @@ bool Shell::Run()
 			}
 			case clear:
 			{
-				//executor.Clear();
+				executor.Clear();
+				executor.Help();
+				break;
+			}
+			case wait:
+			{
+				executor.Wait();
 				break;
 			}
 			default:
@@ -97,6 +106,14 @@ bool Shell::Run()
 			}
 		}
 	}
+
+	return true;
+}
+
+bool Shell::History()
+{
+	
+
 
 	return true;
 }

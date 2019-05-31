@@ -1,15 +1,12 @@
 #pragma once
 
-#include "pch.h"
-#include <string>
-#include <map>
-
 enum Commands
 {
 	unknown_command,
 	help,
 	myexit,
 	clear,
+	wait,
 
 };
 
@@ -20,6 +17,7 @@ Commands resolveCommand(std::string input)
 		{ "help", help },
 		{ "myexit", myexit},
 		{ "clear", clear},
+		{"wait", wait}
 	};
 
 	auto itr = commandStrings.find(input);

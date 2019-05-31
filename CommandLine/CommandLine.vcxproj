@@ -157,11 +157,13 @@
   <ItemGroup>
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Executor.h" />
+    <ClInclude Include="History.h" />
     <ClInclude Include="Shell.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Executor.cpp" />
+    <ClCompile Include="History.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

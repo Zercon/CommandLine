@@ -13,6 +13,11 @@
 #include <iostream>
 #include <map>
 #include <queue>
+#include <cstdlib>
+#include <cstdio>
+#include <Windows.h>
+#include <vector>
+#include <conio.h>
 // TODO: add headers that you want to pre-compile here
 
 #endif //PCH_H

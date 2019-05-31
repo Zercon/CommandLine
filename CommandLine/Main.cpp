@@ -1,11 +1,15 @@
 ﻿#include "pch.h"
 #include "Shell.h"
 
+using namespace std;
+
 int main()
 {
+
 	Shell shell;
 	if (!shell.Run())
-		std::cerr << "Run function's error" << std::endl;
+		cerr << "Run function's error" << endl;
 		
+
 	return 0;
 }
