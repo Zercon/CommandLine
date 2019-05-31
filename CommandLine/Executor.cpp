@@ -13,7 +13,7 @@ void Executor::Help()
 		<< "vivod : displays all the following words" << endl
 		<< "currDir : displays current directory" << endl
 		<< "createDir : creates new directory in current directory" << endl
-		<< "listing : observes" << endl
+		<< "listing : displays brief information about files in current dirrectory" << endl
 		<< "}" << endl;
 
 }
