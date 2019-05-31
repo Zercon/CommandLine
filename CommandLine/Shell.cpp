@@ -28,7 +28,6 @@ queue<char*> Shell::Parse(char* input)
 
 	// Establish string and get the first token:
 	token = strtok_s(input, seps, &next_token);
-	//tokens.push(token);
 	if (debug)
 	{
 		cout << "Tokens: " << token;
@@ -41,7 +40,7 @@ queue<char*> Shell::Parse(char* input)
 		if (token != NULL)
 		{
 			tokens.push(token);
-			token = strtok_s(NULL, seps, &next_token); //от строки отрезается только 1 элемент, как исправить?
+			token = strtok_s(NULL, seps, &next_token);
 			if (debug && (token != NULL))
 			{
 				cout << " " << token;
@@ -63,31 +62,15 @@ bool Shell::Run()
 	{
 		cout << ">"; 
 		char* nextInput;
-		//cin >> this->input; //считывает только до пробела
-		
-		//gets(input);
-			//std::vector<double> vec;
-		//queue<char*> inputs;
-
 		string temp;
 		getline(cin, temp);
 		strcpy(this->input, temp.c_str());
 
-		//cout << input; system("pause");
-
-		//input = (char*)str;
-
-		//double x;
-	//while (((istream.peek()) != '\n') && (istream >> x))
-		//{
-		//	inputs.push(x);
-		//}
-		//cin.getline(commandChar, 50);
 		queue<char*> inputs = Parse(this->input);
 
 		while (!inputs.empty())
 		{
-			nextInput = inputs.back();
+			nextInput = inputs.front();
 			inputs.pop();
 
 			switch (resolveCommand(nextInput))
